@@ -1,0 +1,14 @@
+#main-title{
+    margin: 40px 50px;
+    padding: 20px 0 20px 35px;
+    background-color: #ffffff;
+}
+
+@media screen and (max-width: 890px){
+    #main-title{
+        margin: 40px 7px;
+        padding: 20px 0 20px 35px;
+        background-color: #ffffff;
+    }
+}
+
