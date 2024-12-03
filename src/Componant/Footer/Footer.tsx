@@ -6,14 +6,19 @@ export default function Footer(){
         <footer id={styles.footer}>
             <div id={styles.footer_sub}>
                 <div><p className={styles.Large_text_footer}><i className="fa-solid fa-user"></i>Hamza Khalifa</p></div>
-                <div><a href="https://www.linkedin.com/in/hamza-khalifa-385b23287" target="_blank"><p
-                    className="styles.Large_text_footer"><i className="fa-brands fa-linkedin"></i>LinkedIn</p></a></div>
+                <div>
+                    <a href="https://www.linkedin.com/in/hamza-khalifa-385b23287" target="_blank">
+                    <p className={styles.Large_text_footer}>
+                        <i className="fa-brands fa-linkedin"></i>
+                        LinkedIn
+                    </p>
+                    </a>
+                </div>
                 <div>
                     <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">
                         <p className={styles.Large_text_footer}>
-                            <i className="fa-solid fa-envelope">
-
-                            </i>engHamzaKha@gmail.com
+                            <i className="fa-solid fa-envelope"></i>
+                            engHamzaKha@gmail.com
                         </p>
                     </a>
                 </div>
