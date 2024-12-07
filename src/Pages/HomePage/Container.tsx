@@ -2,10 +2,10 @@ import {DataOfContainer} from "../../data";
 import React from "react";
 import styles from './Container.module.css'
 
-function Container({ title, description, imageUrl }: { title: string; description: string; imageUrl: any }) {
+const Container=({ title, description, imageUrl }: { title: string; description: string; imageUrl: any }):JSX.Element=>{
     return (
         <div className={styles.container}>
-            <img className={styles.img} src={imageUrl} alt={title} />
+            <img className={styles.img} src={imageUrl} alt={title}/>
             <div>
                 <h2 className={styles.Large_text}>{title}</h2>
                 <p className={styles.small_text}>{description}</p>
@@ -14,8 +14,8 @@ function Container({ title, description, imageUrl }: { title: string; descriptio
     );
 }
 
-export default function Over_all (){
-    return(
+export default function Over_all() {
+    return (
         <div id={styles.over_all}>
             <Container {...DataOfContainer[0]}/>
             <Container {...DataOfContainer[1]}/>
