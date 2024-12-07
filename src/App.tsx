@@ -1,9 +1,8 @@
 import React from 'react';
 import './App.css';
 import styled from 'styled-components';
-import Header from "./Componant/Header/index";
-import Main_title from "./Componant/Main_Titel/index";
-import Footer from "./Componant/Footer/index";
+import Layout from './Layouts/Layout';
+import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HomePage from "./Pages/HomePage/index";
 
 const DivHome = styled.div`
@@ -35,10 +34,14 @@ const DivHome = styled.div`
 function App() {
     return (
         <DivHome>
-            <Header />
-            <Main_title />
-            <HomePage />
-            <Footer />
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route path="/" element={<HomePage />} />
+                    <Route path="/" element={<div>Home</div>} />
+                </Routes>
+            </Layout>
+        </Router>
         </DivHome>
     );
 }
