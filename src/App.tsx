@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Layout from './Layouts/Layout';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import HomePage from "./Pages/HomePage/index";
+import AnotherPage from "./Pages/AnotherPage/index";
 
 const DivHome = styled.div`
     * {
@@ -38,7 +39,7 @@ function App() {
             <Layout>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
-                    <Route path="/" element={<div>Home</div>} />
+                    <Route path="/anotherPage" element={<AnotherPage />} />
                 </Routes>
             </Layout>
         </Router>
