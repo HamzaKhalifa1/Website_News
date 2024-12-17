@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import styled from 'styled-components';
 import Layout from './Layouts/Layout';
-import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
+import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import HomePage from "./Pages/HomePage/index";
 import AnotherPage from "./Pages/AnotherPage/index";
 
@@ -32,17 +32,18 @@ const DivHome = styled.div`
     }
 `;
 
+const route = createBrowserRouter([
+    {path:'/',element:<Layout/>,
+        children:[
+        {path:'/',element:<HomePage/>},
+        {path:'/anotherPage',element:<AnotherPage/>}
+    ]}
+])
+
 function App() {
     return (
         <DivHome>
-        <Router>
-            <Layout>
-                <Routes>
-                    <Route path="/" element={<HomePage />} />
-                    <Route path="/anotherPage" element={<AnotherPage />} />
-                </Routes>
-            </Layout>
-        </Router>
+            <RouterProvider router={route}/>
         </DivHome>
     );
 }
