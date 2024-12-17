@@ -1,18 +1,16 @@
 import React from 'react';
 import { Header, Footer } from '../Componant/Header_Footer';
 import Main_Title from "../Componant/Main_Title";
-import {NavLink}  from 'react-router-dom';
+import {Outlet,NavLink}  from 'react-router-dom';
 import styles from './Layout.module.css'
 
 
-const Layout     = ({ children }:any) => {
+const Layout     = () => {
     return (
         <div>
             <Header/>
             <Main_Title/>
-            <main>
-                {children}
-            </main>
+            <Outlet/>
             <section className={styles.section}>
                 <NavLink to="/" className={styles.link}>
                     HomePage
