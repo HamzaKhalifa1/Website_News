@@ -1,6 +1,6 @@
-import books from './assets/imges/books.png'
-import data from './assets/imges/data.png'
-import font from './assets/imges/font.png'
+import books from './assets/images/books.png'
+import data from './assets/images/data.png'
+import font from './assets/images/font.png'
 
 export const DataOfContainer = [
     {
