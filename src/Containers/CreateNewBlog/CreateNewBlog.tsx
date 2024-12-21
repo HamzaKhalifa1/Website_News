@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
 const CreateNewBlog = () => {
-    const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
 
     const onSubmit = (data: any) => {
@@ -14,6 +14,7 @@ const CreateNewBlog = () => {
             imageUrl: data.imageUrl,
         };
         axios.post(`http://localhost:8000/blogs`, formattedData)
+        reset();
     };
 
     return (
