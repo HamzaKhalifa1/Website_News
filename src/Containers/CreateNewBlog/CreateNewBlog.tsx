@@ -1,11 +1,20 @@
 import React from "react";
 import './CreateNewBlog.css';
 import { useForm } from 'react-hook-form';
+import axios from 'axios';
 
 const CreateNewBlog = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data: any) => console.log(data);
+
+    const onSubmit = (data: any) => {
+        const formattedData = {
+            title: data.title,
+            description: data.description,
+            imageUrl: data.imageUrl,
+        };
+        axios.post(`http://localhost:8000/blogs`, formattedData)
+    };
 
     return (
         <form id="new-blog-form" onSubmit={handleSubmit(onSubmit)}>
@@ -51,6 +60,6 @@ const CreateNewBlog = () => {
             <input type="submit" />
         </form>
     );
-}
+};
 
 export default CreateNewBlog;
