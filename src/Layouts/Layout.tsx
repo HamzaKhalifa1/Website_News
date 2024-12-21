@@ -15,7 +15,7 @@ const Layout     = () => {
                 <NavLink to="/" className={styles.link}>
                     HomePage
                 </NavLink>
-                <NavLink to="/anotherPage" className={styles.link}>
+                <NavLink to="/CreateNewBlog" className={styles.link}>
                     Home
                 </NavLink>
             </section>
