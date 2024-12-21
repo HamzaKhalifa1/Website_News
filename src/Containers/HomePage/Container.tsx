@@ -1,6 +1,10 @@
-import {DataOfContainer} from "../../data";
-import React from "react";
+import React, {useEffect, useState} from "react";
 import styles from './Container.module.css'
+import axios from "axios";
+
+
+
+
 
 const Container=({ title, description, imageUrl }: { title: string; description: string; imageUrl: any }):JSX.Element=>{
     return (
@@ -14,15 +18,23 @@ const Container=({ title, description, imageUrl }: { title: string; description:
     );
 }
 
+
+
 export default function Over_all() {
-    return (
+    const [data,setData]=useState<any>(null)
+    const [loading, setLoading]=useState(true)
+    useEffect(() => {
+        axios.get(`http://localhost:8000/blogs`).then(res=>{
+            setData(res.data)
+            // setLoading(false)
+        });
+    }, []);
+
+    return !loading ? <p>Loading...</p> :(
         <div id={styles.over_all}>
-            <Container {...DataOfContainer[0]}/>
-            <Container {...DataOfContainer[1]}/>
-            <Container {...DataOfContainer[2]}/>
-            <Container {...DataOfContainer[0]}/>
-            <Container {...DataOfContainer[1]}/>
-            <Container {...DataOfContainer[2]}/>
+            {data && data?.map((item:any)=>
+            <Container key={item.id} {...item}/>
+            )}
         </div>
     );
 }
