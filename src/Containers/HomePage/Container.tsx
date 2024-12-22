@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import styles from './Container.module.css';
-import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
 import Pagination from '@mui/material/Pagination';
+import {useLoaderData} from "react-router-dom";
 
 const NumberOFBlogs = 6;
 
@@ -19,8 +19,6 @@ const Container = ({ title, description, imageUrl }: { title: string; descriptio
 };
 
 export default function Over_all() {
-    const [data, setData] = useState<any>(null);
-    const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
     const [loading,setLoading]=useState(true);
 
@@ -30,15 +28,16 @@ export default function Over_all() {
         if (data) {
             setTimeout(() => {
                 setLoading(false);
-            },2000)
-        });
-    }, []);
+            }, 2000);
+        }
+    }, [data]);
 
     const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
         setTimeout(()=>{
             setLoading(false);
         },1000)
         setCurrentPage(page);
+        setLoading(true);
     };
 
     const startIndex = (currentPage - 1) * NumberOFBlogs;
