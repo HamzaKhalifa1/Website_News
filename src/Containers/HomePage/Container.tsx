@@ -36,6 +36,13 @@ export default function Over_all() {
         });
     }, []);
 
+    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
+        setCurrentPage(page);
+    };
+
+    const startIndex = (currentPage - 1) * NumberOFBlogs;
+    const paginatedData = data ? data.slice(startIndex, startIndex + NumberOFBlogs) : [];
+
     return loading ? (
             <CircularProgress />
     ) : (
