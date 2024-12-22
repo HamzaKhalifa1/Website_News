@@ -27,9 +27,8 @@ export default function Over_all() {
     const data=useLoaderData();
 
     useEffect(() => {
-        axios.get(`http://localhost:8000/blogs`).then(res => {
-            setData(res.data);
-            setTimeout(()=>{
+        if (data) {
+            setTimeout(() => {
                 setLoading(false);
             },2000)
         });
