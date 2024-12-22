@@ -39,21 +39,25 @@ export default function Over_all() {
     const startIndex = (currentPage - 1) * NumberOFBlogs;
     const paginatedData = data ? data.slice(startIndex, startIndex + NumberOFBlogs) : [];
 
-    return loading ? (
-        <CircularProgress />
-    ) : (
-        <>
-            <div id={styles.over_all}>
-                {paginatedData.map((item: any) => (
-                    <Container key={item.id} {...item} />
-                ))}
-            </div>
-            <Pagination
-                count={Math.ceil((data.length || 0) / NumberOFBlogs)}
-                color="primary"
-                page={currentPage}
-                onChange={handlePageChange}
-            />
-        </>
-    );
+    return loading ?
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
+            <CircularProgress/>
+        </div>
+        :(
+            <>
+                <div id={styles.over_all}>
+                    {paginatedData.map((item: any) => (
+                        <Container key={item.id} {...item} />
+                    ))}
+                </div>
+                <div style={{ display: "flex", justifyContent: "center", alignItems: "center",padding: '20px 0' }}>
+                    <Pagination
+                        count={Math.ceil((data?.length || 0) / NumberOFBlogs)}
+                        color="primary"
+                        page={currentPage}
+                        onChange={handlePageChange}
+                    />
+                </div>
+            </>
+        );
 }
