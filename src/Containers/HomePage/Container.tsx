@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react";
 import styles from './Container.module.css'
 import axios from "axios";
-
+import CircularProgress from '@mui/material/CircularProgress';
 
 
 
@@ -35,7 +35,7 @@ export default function Over_all() {
     }, []);
 
     return loading ? (
-        <p>Loading...</p>
+            <CircularProgress />
     ) : (
         <div id={styles.over_all}>
             {data && data.map((item: any) => (
