@@ -22,6 +22,9 @@ export default function Over_all() {
     const [data, setData] = useState<any>(null);
     const [loading, setLoading] = useState(true);
     const [currentPage, setCurrentPage] = useState(1);
+    const [loading,setLoading]=useState(true);
+
+    const data=useLoaderData();
 
     useEffect(() => {
         axios.get(`http://localhost:8000/blogs`).then(res => {
