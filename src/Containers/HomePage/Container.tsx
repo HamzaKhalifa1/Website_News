@@ -2,6 +2,8 @@ import React, {useEffect, useState} from "react";
 import styles from './Container.module.css'
 import axios from "axios";
 import CircularProgress from '@mui/material/CircularProgress';
+import Pagination from '@mui/material/Pagination';
+
 
 
 
@@ -37,10 +39,13 @@ export default function Over_all() {
     return loading ? (
             <CircularProgress />
     ) : (
+        <>
         <div id={styles.over_all}>
             {data && data.map((item: any) => (
                 <Container key={item.id} {...item} />
             ))}
         </div>
+            <Pagination count={10} color="primary" />
+        </>
     );
 }
