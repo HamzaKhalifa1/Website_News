@@ -35,6 +35,9 @@ export default function Over_all() {
     }, []);
 
     const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
+        setTimeout(()=>{
+            setLoading(false);
+        },1000)
         setCurrentPage(page);
     };
 
