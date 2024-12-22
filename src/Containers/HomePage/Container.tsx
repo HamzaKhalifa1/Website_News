@@ -6,6 +6,7 @@ import axios from "axios";
 
 
 
+
 const Container=({ title, description, imageUrl }: { title: string; description: string; imageUrl: any }):JSX.Element=>{
     return (
         <div className={styles.container}>
@@ -19,22 +20,27 @@ const Container=({ title, description, imageUrl }: { title: string; description:
 }
 
 
-
 export default function Over_all() {
-    const [data,setData]=useState<any>(null)
-    const [loading, setLoading]=useState(true)
+    const [data, setData] = useState<any>(null);
+    const [loading, setLoading] = useState(true);
+
     useEffect(() => {
-        axios.get(`http://localhost:8000/blogs`).then(res=>{
-            setData(res.data)
-            // setLoading(false)
+        axios.get(`http://localhost:8000/blogs`).then(res => {
+            setData(res.data);
+
+            setTimeout(() => {
+                setLoading(false);
+            }, 2000);
         });
     }, []);
 
-    return !loading ? <p>Loading...</p> :(
+    return loading ? (
+        <p>Loading...</p>
+    ) : (
         <div id={styles.over_all}>
-            {data && data?.map((item:any)=>
-            <Container key={item.id} {...item}/>
-            )}
+            {data && data.map((item: any) => (
+                <Container key={item.id} {...item} />
+            ))}
         </div>
     );
 }
