@@ -1,5 +1,5 @@
 import React from "react";
-import './CreateNewBlog.css';
+import styles from './CreateNewBlog.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 
@@ -18,16 +18,16 @@ const CreateNewBlog = () => {
     };
 
     return (
-        <form id="new-blog-form" onSubmit={handleSubmit(onSubmit)}>
+        <form id={styles['new-blog-form']} onSubmit={handleSubmit(onSubmit)}>
             <label htmlFor="title">Title:</label>
             <input
                 type="text"
                 id="title"
-                className={`title-input ${errors.title ? "error" : ""}`}
+                className={styles[`title-input ${errors.title ? "error" : ""}`]}
                 placeholder="Enter title"
                 {...register("title", { required: true, pattern: /^[A-Z]/, maxLength: 50 })}
             />
-            <div id="title-error" className="error-message">
+            <div id={styles['title-error']} className={styles['error-message']}>
                 {errors.title?.type === "required" && "Title is required."}
                 {errors.title?.type === "pattern" && "Title must start with a capital letter."}
                 {errors.title?.type === "maxLength" && "Title cannot exceed 50 characters."}
@@ -35,12 +35,12 @@ const CreateNewBlog = () => {
 
             <label htmlFor="description">Description:</label>
             <textarea
-                id="description"
-                className={`textarea-input ${errors.description ? "error" : ""}`}
+                id={styles['description']}
+                className={styles[`textarea-input ${errors.description ? "error" : ""}`]}
                 placeholder="Enter description"
                 {...register("description", { required: true, pattern: /^[a-zA-Z ]*$/, maxLength: 1000 })}
             ></textarea>
-            <div id="description-error" className="error-message">
+            <div id={styles["description-error"]} className={styles['error-message']}>
                 {errors.description?.type === "required" && "Description is required."}
                 {errors.description?.type === "pattern" && "Description can only contain letters and spaces."}
                 {errors.description?.type === "maxLength" && "Description cannot exceed 1000 characters."}
@@ -49,12 +49,12 @@ const CreateNewBlog = () => {
             <label htmlFor="image-url">Image URL:</label>
             <input
                 type="text"
-                id="image-url"
-                className={`image-input ${errors.imageUrl ? "error" : ""}`}
+                id={styles["image-url"]}
+                className={styles[`image-input ${errors.imageUrl ? "error" : ""}`]}
                 placeholder="Enter image URL"
                 {...register("imageUrl", { pattern: /^(https?:\/\/[^\s]+)$/ })}
             />
-            <div id="image-url-error" className="error-message">
+            <div id={styles["image-url-error"]} className={styles['error-message']}>
                 {errors.imageUrl?.type === "pattern" && "Please enter a valid URL."}
             </div>
 
