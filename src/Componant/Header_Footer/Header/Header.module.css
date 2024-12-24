@@ -29,32 +29,13 @@ section a:hover {
     transform: scale(1.1);
 }
 @media screen and (max-width: 648px){
-    #nav{
-        display: flex;
-        width: 100%;
-        background-color: #32315d;
-        height: 70px;
-        justify-content: space-between;
-    }
     #div_img{
         margin: auto 10px;
     }
     section {
-        margin: auto 0;
-        display: flex;
-    }
+        margin: auto 0;}
     section a {
-        color: white;
-        text-decoration: none;
         font-size: 16px;
-        font-weight: 600;
-        padding: 10px 15px;
-        transition: all 0.3s ease-in-out;
-    }
-    section a:hover {
-        background-color: #32315d;
-        color: #eaeaea;
-        transform: scale(1.1);
     }
 
 }
