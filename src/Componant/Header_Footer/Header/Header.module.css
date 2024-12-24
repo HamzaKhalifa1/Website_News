@@ -12,7 +12,6 @@
 section {
     margin: auto 20px;
     display: flex;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 section a {
