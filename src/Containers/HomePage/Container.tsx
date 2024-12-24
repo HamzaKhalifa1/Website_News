@@ -3,12 +3,14 @@ import styles from './Container.module.css';
 import CircularProgress from '@mui/material/CircularProgress';
 import Pagination from '@mui/material/Pagination';
 import {useLoaderData} from "react-router-dom";
+import DeleteButton from "../../Componant/Button/index";
 
 const NumberOFBlogs = 6;
 
-const Container = ({ title, description, imageUrl }: { title: string; description: string; imageUrl: any }): JSX.Element => {
+const Container = ({ id, title, description, imageUrl }: {id:number; title: string; description: string; imageUrl: any }): JSX.Element => {
     return (
         <div className={styles.container}>
+            <DeleteButton id={id} />
             <img className={styles.img} src={imageUrl} alt={title} />
             <div>
                 <h2 className={styles.Large_text}>{title}</h2>
