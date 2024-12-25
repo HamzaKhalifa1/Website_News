@@ -9,7 +9,7 @@ const DeleteButton = ({ id ,onDelete} ) => {
         onDelete(id);
     };
     return (
-        <button onClick={deleteBlog}><i className={styles["fa fa-trash icon"]}></i></button>
+        <i onClick={deleteBlog} className={styles.icon + " fa fa-trash icon"}></i>
     );
 }
 
