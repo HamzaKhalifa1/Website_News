@@ -2,10 +2,12 @@ import React from "react";
 import styles from './CreateNewBlog.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
+import {useNavigate} from "react-router-dom";
 
 const CreateNewBlog = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
 
+    const navigate = useNavigate();
 
     const onSubmit = (data: any) => {
         const formattedData = {
@@ -15,6 +17,7 @@ const CreateNewBlog = () => {
         };
         axios.post(`http://localhost:8000/blogs`, formattedData)
         reset();
+        navigate('/');
     };
 
     return (
