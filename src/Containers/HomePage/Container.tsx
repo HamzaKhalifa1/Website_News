@@ -7,10 +7,10 @@ import DeleteButton from "../../Componant/Button/index";
 
 const NumberOFBlogs = 6;
 
-const Container = ({ id, title, description, imageUrl }: {id:number; title: string; description: string; imageUrl: any }): JSX.Element => {
+const Container = ({ id, title, description, imageUrl, onDelete }: {id:number; title: string; description: string; imageUrl: any;onDelete:any }): JSX.Element => {
     return (
         <div className={styles.container}>
-            <DeleteButton id={id} />
+            <DeleteButton id={id} onDelete={onDelete}/>
             <img className={styles.img} src={imageUrl} alt={title} />
             <div>
                 <h2 className={styles.Large_text}>{title}</h2>
@@ -21,10 +21,12 @@ const Container = ({ id, title, description, imageUrl }: {id:number; title: stri
 };
 
 export default function Over_all() {
+    const initialData  = useLoaderData();
+    const [data, setData] = useState(initialData );
     const [currentPage, setCurrentPage] = useState(1);
-    const [loading,setLoading]=useState(true);
+    const [loading, setLoading] = useState(true);
 
-    const data=useLoaderData();
+
 
     useEffect(() => {
         if (data) {
@@ -32,12 +34,13 @@ export default function Over_all() {
                 setLoading(false);
             }, 2000);
         }
+
     }, [data]);
 
     const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
-        setTimeout(()=>{
+        setTimeout(() => {
             setLoading(false);
-        },1000)
+        }, 1000)
         setCurrentPage(page);
         setLoading(true);
     };
@@ -46,17 +49,17 @@ export default function Over_all() {
     const paginatedData = data ? data.slice(startIndex, startIndex + NumberOFBlogs) : [];
 
     return loading ?
-        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", height: "50vh" }}>
+        <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "50vh"}}>
             <CircularProgress/>
         </div>
-        :(
+        : (
             <>
                 <div id={styles.over_all}>
                     {paginatedData.map((item: any) => (
-                        <Container key={item.id} {...item} />
+                        <Container key={item.id} {...item} onDelete={(id:any) => setData(data.filter((blog:any) => blog.id !== id))}/>
                     ))}
                 </div>
-                <div style={{ display: "flex", justifyContent: "center", alignItems: "center",padding: '20px 0' }}>
+                <div style={{display: "flex", justifyContent: "center", alignItems: "center", padding: '20px 0'}}>
                     <Pagination
                         count={Math.ceil((data?.length || 0) / NumberOFBlogs)}
                         color="primary"
@@ -66,4 +69,4 @@ export default function Over_all() {
                 </div>
             </>
         );
-}
+};
