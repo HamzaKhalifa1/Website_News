@@ -21,11 +21,11 @@ const Container = ({ id, title, description, imageUrl, onDelete }: {id:number; t
 };
 
 export default function Over_all() {
-    const initialData  = useLoaderData();
+    const initialData2  = useLoaderData();
+    const initialData = [...initialData2].reverse();
     const [data, setData] = useState(initialData );
     const [currentPage, setCurrentPage] = useState(1);
     const [loading, setLoading] = useState(true);
-
 
 
     useEffect(() => {
