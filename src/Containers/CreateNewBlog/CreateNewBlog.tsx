@@ -17,8 +17,11 @@ const CreateNewBlog = () => {
             imageUrl: data.imageUrl,
         };
         axios.post(`http://localhost:8000/blogs`, formattedData)
-        reset();
-        navigate('/');
+            .then(() => {
+                setTimeout(() => hideLoader(), 1000);
+            })
+        setTimeout(() => navigate('/'), 1000);
+
     };
 
     return (
