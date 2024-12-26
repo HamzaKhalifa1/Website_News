@@ -5,7 +5,8 @@ import axios from 'axios';
 import {useNavigate} from "react-router-dom";
 
 const CreateNewBlog = () => {
-    const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const { showLoader, hideLoader } = useLoader();
+    const { register, handleSubmit, formState: { errors },trigger } = useForm();
 
     const navigate = useNavigate();
 
