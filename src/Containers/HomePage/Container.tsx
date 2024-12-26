@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styles from './Container.module.css';
-import CircularProgress from '@mui/material/CircularProgress';
 import Pagination from '@mui/material/Pagination';
 import {useLoaderData} from "react-router-dom";
 import DeleteButton from "../../Componant/Button/index";
+import {useLoader} from "../../Contexts/LoaderContext/LoaderContext";
 
 const NumberOFBlogs = 6;
 
@@ -21,38 +21,23 @@ const Container = ({ id, title, description, imageUrl, onDelete }: {id:number; t
 };
 
 export default function Over_all() {
+    const {showLoader, hideLoader} = useLoader();
     const initialData2  = useLoaderData();
     const initialData = [...initialData2].reverse();
     const [data, setData] = useState(initialData );
     const [currentPage, setCurrentPage] = useState(1);
-    const [loading, setLoading] = useState(true);
 
-
-    useEffect(() => {
-        if (data) {
-            setTimeout(() => {
-                setLoading(false);
-            }, 2000);
-        }
-
-    }, [data]);
-
-    const handlePageChange = (event: React.ChangeEvent<unknown>, page: number) => {
-        setTimeout(() => {
-            setLoading(false);
-        }, 1000)
+    const  handlePageChange = async (event: React.ChangeEvent<unknown>, page: number) => {
+        showLoader();
+        await new Promise((resolve) => setTimeout(resolve, 1000));
+        hideLoader();
         setCurrentPage(page);
-        setLoading(true);
     };
 
     const startIndex = (currentPage - 1) * NumberOFBlogs;
     const paginatedData = data ? data.slice(startIndex, startIndex + NumberOFBlogs) : [];
 
-    return loading ?
-        <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "50vh"}}>
-            <CircularProgress/>
-        </div>
-        : (
+    return(
             <>
                 <div id={styles.over_all}>
                     {paginatedData.map((item: any) => (
