@@ -6,6 +6,7 @@ import {createBrowserRouter,RouterProvider} from 'react-router-dom';
 import HomePage from "./Containers/HomePage/index";
 import CreateNewBlog from "./Containers/CreateNewBlog/index";
 import axios from "axios";
+import {LoaderContextProvider} from "./Contexts/LoaderContext/LoaderContext";
 
 const DivHome = styled.div`
     * {
@@ -36,21 +37,23 @@ const DivHome = styled.div`
 const route = createBrowserRouter([
     {path:'/',element:<Layout/>,
         children:[
-        {index:true,element:<HomePage/>,loader: async ():Promise<any>=> {
-            const response = await axios.get(`http://localhost:8000/blogs`);
-            const data:any = response.data;
-            return data;
-        }
-        },
-        {path:'CreateNewBlog',element:<CreateNewBlog/>},
-    ]}
+            {index:true,element:<HomePage/>,loader: async ():Promise<any>=> {
+                    const response = await axios.get(`http://localhost:8000/blogs`);
+                    const data:any = response.data;
+                    return data;
+                }
+            },
+            {path:'CreateNewBlog',element:<CreateNewBlog/>},
+        ]}
 ])
 
 function App() {
     return (
-        <DivHome>
+        <LoaderContextProvider>
+          <DivHome>
             <RouterProvider router={route}/>
-        </DivHome>
+          </DivHome>
+        </LoaderContextProvider>
     );
 }
 
