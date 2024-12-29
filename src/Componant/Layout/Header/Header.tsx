@@ -17,7 +17,8 @@ export default function Header (){
                 <NavLink to="/CreateNewBlog" className={styles.link}>
                     Create new Blogs
                 </NavLink>
+
             </section>
-        </header >
+        </header>
     );
 }

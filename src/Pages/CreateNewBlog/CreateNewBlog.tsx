@@ -3,10 +3,8 @@ import styles from './CreateNewBlog.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
-import {useLoader} from "../../Contexts/LoaderContext/LoaderContext";
 
 const CreateNewBlog = () => {
-    const { showLoader, hideLoader } = useLoader();
     const { register, handleSubmit, formState: { errors },trigger } = useForm();
 
     const navigate = useNavigate();
@@ -17,12 +15,8 @@ const CreateNewBlog = () => {
             description: data.description,
             imageUrl: data.imageUrl,
         };
-        showLoader();
         axios.post(`http://localhost:8000/blogs`, formattedData)
-            .then(() => {
-                setTimeout(() => hideLoader(), 1000);
-            })
-        setTimeout(() => navigate('/'), 1000);
+         navigate('/')
 
     };
 
