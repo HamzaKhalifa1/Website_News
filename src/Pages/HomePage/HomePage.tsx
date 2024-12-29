@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback } from "react";
+import React, { useState, useCallback } from "react";
 import styles from './HomePage.module.css';
 import { useLoaderData } from "react-router-dom";
 import DeleteButton from "../../Componant/HomePage/DeleteButton/index";
@@ -19,7 +19,7 @@ const HomePage = ({ id, title, description, imageUrl, onDelete }: { id: number; 
 
 export default function Over_all() {
     const initialData2 = useLoaderData();
-    const initialData = useMemo(() => [...initialData2].reverse(), [initialData2]);
+    const initialData =[...initialData2].reverse();
 
     const [paginatedData, setPaginatedData] = useState([]);
     const [data, setData] = useState(initialData);
