@@ -11,8 +11,7 @@ const PagesRoutes=()=>{
             children:[
                 {index:true,element:<HomePage/>,loader: async ():Promise<any>=> {
                         const response = await axios.get(`http://localhost:8000/blogs`);
-                        const data:any = response.data;
-                        return data;
+                        return response.data;
                     }
                 },
                 {path:'CreateNewBlog',element:<CreateNewBlog/>},
