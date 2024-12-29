@@ -24,3 +24,4 @@ const useFetchDataGet = (url:string) => {
 
     return {data,loading,error};
 }
+export {useFetchDataGet};
