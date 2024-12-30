@@ -1,4 +1,14 @@
 {
-  "HI": "hi",
-  "Language": "Language"
+  "Language": "Language",
+  "HomePage": "Home Page",
+  "Create new Blogs": "Create new Blogs",
+  "Currently Browsing: Design": "Currently Browsing: Design",
+  "Hamza Khalifa": "Hamza Khalifa",
+  "Title" : "Title:",
+  "Enter title": "Enter title",
+  "Description" : "Description:",
+  "Enter description": "Enter description",
+  "Image URL:" : "Image URL:",
+  "Enter image URL": "Enter image URL",
+  "submit": "Submit"
 }

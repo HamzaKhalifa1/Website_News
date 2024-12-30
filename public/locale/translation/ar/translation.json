@@ -1,4 +1,14 @@
 {
-  "HI": "مرحبا",
-  "Language": "الغة"
+  "Language": "الغة",
+  "HomePage": "الصفحة الرئيسية",
+  "Create new Blogs": "إنشاء مدونات جديدة",
+  "Currently Browsing: Design": "تصفح حاليًا: تصميم",
+  "Hamza Khalifa": "حمزة خليفة",
+  "Title": "العنوان:",
+  "Enter title": "أدخل العنوان",
+  "Description": "الوصف:",
+  "Enter description": "أدخل الوصف",
+  "Image URL:": "عنوان URL للصورة:",
+  "Enter image URL": "أدخل عنوان URL للصورة",
+  "submit": "إرسال"
 }
