@@ -1,9 +1,10 @@
 import logo from "../../../assets/images/logo.png";
-import React from "react";
+import React, {useEffect} from "react";
 import styles from './Header.module.css'
 import {NavLink,Link} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import i18n from "i18next";
+import cookies from 'js-cookie';
 
 
 export default function Header (){
@@ -11,8 +12,11 @@ export default function Header (){
 
     const handleLanguageChange = (lang:string) => {
         i18n.changeLanguage(lang);
-        window.document.dir=i18n.dir(lang);
     };
+    const lng = cookies.get('i18next') || 'en';
+    useEffect(() => {
+        window.document.dir=i18n.dir(lng);
+    },[lng])
 
     return (
         <header id={styles.nav} >
@@ -21,10 +25,10 @@ export default function Header (){
             </div>
             <section className={styles.section}>
                 <NavLink to="/" className={styles.link}>
-                    HomePage
+                    {t("HomePage")}
                 </NavLink>
                 <NavLink to="CreateNewBlog" className={styles.link}>
-                    Create new Blogs
+                    {t("Create new Blogs")}
                 </NavLink>
                 <div className={styles.dropdown}>
                     <button className={styles.dropbtn}>{t("Language")}</button>
