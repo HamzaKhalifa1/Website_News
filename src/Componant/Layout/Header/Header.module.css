@@ -28,6 +28,48 @@ section a:hover {
     color: #eaeaea;
     transform: scale(1.1);
 }
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #7273b0;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdownContent {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
+
+.dropdownContent button {
+    background-color: white;
+    color: black;
+    padding: 12px 16px;
+    border: none;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+}
+
+.dropdownContent button:hover {
+    background-color: #ddd;
+}
+
 @media screen and (max-width: 648px){
     #div_img{
         margin: auto 10px;
