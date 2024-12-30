@@ -3,8 +3,10 @@ import styles from './CreateNewBlog.module.css';
 import { useForm } from 'react-hook-form';
 import axios from 'axios';
 import {useNavigate} from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 const CreateNewBlog = () => {
+    const { t } = useTranslation();
     const { register, handleSubmit, formState: { errors },trigger } = useForm();
 
     const navigate = useNavigate();
@@ -19,15 +21,16 @@ const CreateNewBlog = () => {
          navigate('/')
 
     };
+    console.log(t("Title:"));
 
     return (
         <form id={styles['new-blog-form']} onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="title">Title:</label>
+            <label htmlFor="title">{t("Title")}</label>
             <input
                 type="text"
                 id="title"
                 className={styles[`title-input ${errors.title ? "error" : ""}`]}
-                placeholder="Enter title"
+                placeholder={t("Enter title")}
                 {...register("title", { required: true, pattern: /^[A-Z]/, maxLength: 50 })}
                 onKeyUp={() => trigger("title")}
             />
@@ -37,11 +40,11 @@ const CreateNewBlog = () => {
                 {errors.title?.type === "maxLength" && "Title cannot exceed 50 characters."}
             </div>
 
-            <label htmlFor="description">Description:</label>
+            <label htmlFor="description">{t("Description")}</label>
             <textarea
                 id={styles['description']}
                 className={styles[`textarea-input ${errors.description ? "error" : ""}`]}
-                placeholder="Enter description"
+                placeholder={t("Enter description")}
                 {...register("description", { required: true, pattern: /^[a-zA-Z ]*$/, maxLength: 1000 })}
                 onKeyUp={() => trigger("description")}
             ></textarea>
@@ -51,12 +54,12 @@ const CreateNewBlog = () => {
                 {errors.description?.type === "maxLength" && "Description cannot exceed 1000 characters."}
             </div>
 
-            <label htmlFor="image-url">Image URL:</label>
+            <label htmlFor="image-url">{t("Image URL:")}</label>
             <input
                 type="text"
                 id={styles["image-url"]}
                 className={styles[`image-input ${errors.imageUrl ? "error" : ""}`]}
-                placeholder="Enter image URL"
+                placeholder={t("Enter image URL")}
                 {...register("imageUrl", { pattern: /^(https?:\/\/[^\s]+)$/ })}
                 onKeyUp={() => trigger("imageUrl")}
             />
@@ -64,7 +67,7 @@ const CreateNewBlog = () => {
                 {errors.imageUrl?.type === "pattern" && "Please enter a valid URL."}
             </div>
 
-            <input type="submit" />
+            <input type="submit"  value={t("submit")}/>
         </form>
     );
 };
