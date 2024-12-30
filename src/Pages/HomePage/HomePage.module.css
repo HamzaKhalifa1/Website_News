@@ -21,7 +21,8 @@
     width:100%;
 }
 .Large_text{
-    margin-left:10px;
+    margin-left:0.5em;
+    margin-right:0.5em;
     overflow: auto;
     font-size: 20px;
 }
