@@ -1,5 +1,5 @@
 {
-  "Language": "الغة",
+  "Language": "ألغة",
   "HomePage": "الصفحة الرئيسية",
   "Create new Blogs": "إنشاء مدونات جديدة",
   "Currently Browsing: Design": "تصفح حاليًا: تصميم",
@@ -10,5 +10,13 @@
   "Enter description": "أدخل الوصف",
   "Image URL:": "عنوان URL للصورة:",
   "Enter image URL": "أدخل عنوان URL للصورة",
-  "submit": "إرسال"
+  "submit": "إرسال",
+    "Title is required.": "العنوان مطلوب.",
+    "Title must contains Arabic letters": "يجب أن يحتوي العنوان على حروف عربية.",
+    "Title cannot exceed 50 characters.": "لا يمكن أن يتجاوز العنوان 50 حرفًا.",
+    "Description is required.": "الوصف مطلوب.",
+    "Description can only contain English letters and spaces.": "يمكن أن يحتوي الوصف فقط على حروف إنجليزية ومسافات.",
+    "Description can only contain Arabic letters and spaces.": "يمكن أن يحتوي الوصف فقط على حروف عربية ومسافات.",
+    "Description cannot exceed 1000 characters.": "لا يمكن أن يتجاوز الوصف 1000 حرف.",
+    "Please enter a valid URL.": "الرجاء إدخال عنوان URL صحيح."
 }
