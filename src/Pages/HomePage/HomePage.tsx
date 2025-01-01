@@ -1,7 +1,7 @@
 import React, { useState, useCallback } from "react";
 import styles from './HomePage.module.css';
 import { useLoaderData } from "react-router-dom";
-import DeleteButton from "../../Componant/HomePage/DeleteButton/index";
+import DeleteButton from "../../Componant/HomePage/DeleteButton";
 import CustomPagination from "../../Componant/HomePage/Pagination";
 
 const HomePage = ({ id, title, description, imageUrl, onDelete }: { id: number; title: string; description: string; imageUrl: any; onDelete: any }): JSX.Element => {
