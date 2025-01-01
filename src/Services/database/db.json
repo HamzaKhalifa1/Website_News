@@ -1,178 +1,33 @@
 {
-  "blogs": [
-    {
-      "id": "1",
-      "title": "15+ Best Angular Admin Dashboard Templates of 2020 – Users Choice",
-      "description": "We have compiled a list of best Angular templates for you. These offer you to start your web application and help you build a powerful and practical administration panel",
-      "imageUrl": "./assets/imges/books.png-"
-    },
-    {
-      "id": "2",
-      "title": "30 Beautiful Google Fonts for Your Website",
-      "description": "Finding attractive, user-friendly, legible fonts for your website isn’t always easy, but Google Fonts, launched in 2010, helps solve that problem. Having started small, the directory now includes more",
-      "imageUrl": "./assets/imges/data.png"
-    },
-    {
-      "id": "3",
-      "title": "Design Thinking 101 for Designers",
-      "description": "Creativity doesn’t just happen. The most inspired and innovative teams and individual designers need to be a part of a culture that enables forward-thinking, acceleration, and efficiency.",
-      "imageUrl": "./assets/imges/font.png"
-    },
-    {
-      "id": "4283",
-      "title": "L",
-      "description": "kll",
-      "imageUrl": "https://media.cdn-jer.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "8acc",
-      "title": "FFF",
-      "description": "hjkjkl",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "7c3f",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "37c4",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "97c7",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "af02",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "ed6d",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "bac8",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "0671",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "1e20",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "3a62",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "12ab",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "8e73",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "f0a4",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "3044",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "48ca",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "2269",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "9a1a",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "1081",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "7a42",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "98fe",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "b2ec",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "712c",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "446c",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "0d08",
-      "title": "Test",
-      "description": "test",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    },
-    {
-      "id": "6798",
-      "title": "Fdfd",
-      "description": "ddf",
-      "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
-    }
-  ]
+  "blogs": {
+    "en": [
+      {
+        "id": "1",
+        "title": "15+ Best Angular Admin Dashboard Templates of 2020 – Users Choice",
+        "description": "We have compiled a list of best Angular templates for you. These offer you to start your web application and help you build a powerful and practical administration panel",
+        "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
+      },
+      {
+        "id": "2",
+        "title": "30 Beautiful Google Fonts for Your Website",
+        "description": "Finding attractive, user-friendly, legible fonts for your website isn’t always easy, but Google Fonts, launched in 2010, helps solve that problem. Having started small, the directory now includes more",
+        "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
+      }
+    ],
+    "ar": [
+      {
+        "id": "1",
+        "title": "أفضل 15+ قالب لوحة تحكم إدارية Angular لعام 2020 - اختيار المستخدمين",
+        "description": "لقد قمنا بتجميع قائمة بأفضل قوالب Angular لك. تقدم لك هذه البداية لتطبيق الويب الخاص بك وتساعدك في بناء لوحة إدارة قوية وعملية",
+        "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
+      },
+      {
+        "id": "2",
+        "title": "30 خطًا جميلاً من Google لموقع الويب الخاص بك",
+        "description": "ليس دائمًا من السهل العثور على خطوط جذابة وسهلة الاستخدام وسهلة القراءة لموقع الويب الخاص بك ، ولكن Google Fonts ، التي تم إطلاقها في عام 2010 ، تساعد في حل تلك المشكلة. بدأت بشكل صغير ، والآن يتضمن الدليل المزيد",
+        "imageUrl": "https://media.cdn-jaguarlandrover.com/api/v2/images/55880/w/680.jpg"
+      }
+    ]
+
+  }
 }
