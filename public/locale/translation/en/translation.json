@@ -10,5 +10,14 @@
   "Enter description": "Enter description",
   "Image URL:" : "Image URL:",
   "Enter image URL": "Enter image URL",
-  "submit": "Submit"
+  "submit": "Submit",
+  "Title is required.": "Title is required.",
+  "Title must start with a capital letter." : "Title must start with a capital letter.",
+  "Title must start with an Arabic letter." : "Title must start with an Arabic letter.",
+  "Title cannot exceed 50 characters." : "Title cannot exceed 50 characters.",
+  "Description is required." : "Description is required.",
+  "Description can only contain English letters and spaces." : "Description can only contain English letters and spaces.",
+  "Description can only contain Arabic letters and spaces." : "Description can only contain Arabic letters and spaces.",
+  "Description cannot exceed 1000 characters." : "Description cannot exceed 1000 characters.",
+  "Please enter a valid URL." : "Please enter a valid URL."
 }

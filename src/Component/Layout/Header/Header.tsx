@@ -5,12 +5,21 @@ import {NavLink,Link} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import i18n from "i18next";
 import cookies from 'js-cookie';
+import {useDispatch} from "react-redux";
+import {setAR, setEN} from "../../../Store/LanguageSlice";
 
 
 export default function Header (){
+    const dispatch = useDispatch();
+
     const {t} = useTranslation();
 
     const handleLanguageChange = (lang:string) => {
+        if (lang === 'en') {
+            dispatch(setEN())
+        } else if (lang === 'ar') {
+            dispatch(setAR())
+       }
         i18n.changeLanguage(lang);
     };
     const lng = cookies.get('i18next') || 'en';
@@ -33,7 +42,7 @@ export default function Header (){
                 <div className={styles.dropdown}>
                     <button className={styles.dropbtn}>{t("Language")}</button>
                     <div className={styles.dropdownContent}>
-                        <button onClick={() => handleLanguageChange('en')}>English</button>
+                        <button onClick={() => handleLanguageChange('en') }>English</button>
                         <button onClick={() => handleLanguageChange('ar')}>العربية</button>
                     </div>
                 </div>
