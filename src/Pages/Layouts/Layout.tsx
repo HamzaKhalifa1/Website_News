@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from '../../Componant/Layout/Header'
-import Footer from '../../Componant/Layout/Footer'
-import Main_Title from "../../Componant/HomePage/Main_Title";
+import Header from '../../Component/Layout/Header'
+import Footer from '../../Component/Layout/Footer'
+import Main_Title from "../../Component/HomePage/Main_Title";
 import {Outlet}  from 'react-router-dom';
 
 
