@@ -9,13 +9,13 @@ i18n
     .use(HttpApi)
     .init({
         debug: true,
-        fallbackLng: 'en',
+        fallbackLng:'en',
         detection: {
             order: ['cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
             caches: ['cookie'],
         },
         backend: {
-            loadPath: '/locale/translation/{{lng}}/translation.json',
+            loadPath: '/src/locales/{{lng}}.json',
         },
     });
 
