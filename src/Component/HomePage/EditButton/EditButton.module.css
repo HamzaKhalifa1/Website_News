@@ -1,0 +1,22 @@
+.icon {
+    position: absolute;
+    top: 2.3em;
+    right: 10px;
+    font-size: 2em;
+    color: green;
+
+    padding: 7px;
+    background-color: #f5f9fc;
+    border-radius: 10%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.icon:hover {
+    animation: shake 0.7s ease;
+    color: #007bff;
+}
+
+@keyframes shake {
+    25% { transform: scale(1.07) rotate(15deg); }
+    50% { transform: scale(1.07) rotate(-15deg); }
+    75% { transform: scale(1.07) rotate(15deg); }
+}
