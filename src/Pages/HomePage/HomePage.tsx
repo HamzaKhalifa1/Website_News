@@ -1,14 +1,17 @@
 import React, { useState, useCallback } from "react";
 import styles from './HomePage.module.css';
 import { useLoaderData } from "react-router-dom";
-import DeleteButton from "../../Component/HomePage/DeleteButton/index";
-import CustomPagination from "../../Component/HomePage/Pagination";
+import DeleteButton from "../../Component/HomePage/DeleteButton";
+import EditButton from "../../Component/HomePage/EditButton";
+import CustomPagination from "../../Component/HomePage/pagination";
+import Main_Title from "../../Component/HomePage/MainTitle";
 
 const HomePage = ({ id, title, description, imageUrl, onDelete }: { id: number; title: string; description: string; imageUrl: any; onDelete: any }): JSX.Element => {
     return (
         <div className={styles.container}>
-            <DeleteButton id={id} onDelete={onDelete} />
-            <img className={styles.img} src={imageUrl} alt={title} />
+            <DeleteButton id={id} onDelete={onDelete}/>
+            <EditButton id={id}/>
+            <img className={styles.img} src={imageUrl} alt={title}/>
             <div>
                 <h2 className={styles.Large_text}>{title}</h2>
                 <p className={styles.small_text}>{description}</p>
@@ -30,6 +33,7 @@ export default function Over_all() {
 
     return (
         <>
+            <Main_Title/>
             <div id={styles.over_all}>
                 {paginatedData && paginatedData.length > 0 ? paginatedData.map((item: any) => (
                     <HomePage key={item.id} {...item} onDelete={(id: any) => setData(data.filter((blog: any) => blog.id !== id))} />
