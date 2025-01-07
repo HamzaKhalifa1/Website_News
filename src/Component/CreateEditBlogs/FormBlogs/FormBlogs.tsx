@@ -1,45 +1,50 @@
+import styles from "./FormBlogs.module.css"
 import React from "react";
-import styles from './CreateNewBlog.module.css';
-import { useForm } from 'react-hook-form';
-import axios from 'axios';
-import {useNavigate} from "react-router-dom";
+import cookies from "js-cookie";
 import {useTranslation} from "react-i18next";
-import {useDispatch, useSelector} from "react-redux";
-import {hideLoader, showLoader} from "../../Store/LoaderSlice";
-import {RootState} from "../../Store/Store";
+import {useForm} from "react-hook-form";
+import axios from "axios";
+import {useNavigate} from "react-router-dom";
+import {hideLoader, showLoader} from "../../../store/LoaderSlice";
+import {useDispatch} from "react-redux";
+import BlogService from "../../../services/BlogService";
 
-const CreateNewBlog = () => {
-    const language=useSelector((state: RootState) => state.language.Language);
-    const dispatch = useDispatch();
-    const { t } = useTranslation();
-    const { register, handleSubmit, formState: { errors }, trigger } = useForm();
+interface FormBlogsProps {
+    isVisited?: boolean,
+    id?: string | null
+}
+
+const FormBlogs = ({isVisited, id}: FormBlogsProps) => {
+    const lng = cookies.get('i18next') || 'en';
+    const {t} = useTranslation();
+    const {register, handleSubmit, formState: {errors}, trigger} = useForm();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
+    const blogService =new BlogService({});
+
+
 
     const onSubmit = (data: any) => {
-        const formattedData = {
-            [language]: [
-                {
-                    id: data.id,
-                    title: data.title,
-                    description: data.description,
-                    imageUrl: data.imageUrl,
-                }
-            ]
-        };
-
         dispatch(showLoader());
-        setTimeout(() => {
-            axios.post('http://localhost:8000/blogs', formattedData)
+        if (isVisited) {
+            blogService.putBlog(data,id,lng)
                 .then(() => {
-                    dispatch(hideLoader());
-                })
-                .catch(() => {
-                    dispatch(hideLoader());
-                    console.error("Error creating blog");
+                    setTimeout(() => {
+                        dispatch(hideLoader());
+                    }, 1000);
+                    navigate('/');
                 });
-        }, 2000);
-        navigate('/');
+        } else {
+            blogService.postBlog(data,lng)
+                .then(() => {
+                    setTimeout(() => {
+                        dispatch(hideLoader());
+                    }, 1000);
+                    navigate('/');
+                });
+        }
     };
+
 
     return (
         <form id={styles['new-blog-form']} onSubmit={handleSubmit(onSubmit)}>
@@ -51,7 +56,7 @@ const CreateNewBlog = () => {
                 placeholder={t("Enter title")}
                 {...register("title", {
                     required: true,
-                    pattern: language === "en" ? /^[A-Z]/ : /^[\u0600-\u06FF\s]*$/,
+                    pattern: lng === "en" ? /^[A-Z]/ : /^[\u0600-\u06FF\s]*$/,
                     maxLength: 50,
                 })}
                 onKeyUp={() => trigger("title")}
@@ -60,9 +65,9 @@ const CreateNewBlog = () => {
                 {errors.title?.type === "required" && <span>{t("Title is required.")}</span>}
                 {errors.title?.type === "pattern" && (
                     <span>
-                {language === "en"
+                {lng === "en"
                     ? t("Title must start with a capital letter.")
-                    : t("Title must contains Arabic letters.")}
+                    : t("Title must contains Arabic letter")}
             </span>
                 )}
                 {errors.title?.type === "maxLength" && <span>{t("Title cannot exceed 50 characters.")}</span>}
@@ -75,7 +80,7 @@ const CreateNewBlog = () => {
                 placeholder={t("Enter description")}
                 {...register("description", {
                     required: true,
-                    pattern: language === "en" ? /^[a-zA-Z ]*$/ : /^[\u0600-\u06FF\s]*$/,
+                    pattern: lng === "en" ? /^[a-zA-Z ]*$/ : /^[\u0600-\u06FF\s]*$/,
                     maxLength: 1000,
                 })}
                 onKeyUp={() => trigger("description")}
@@ -84,7 +89,7 @@ const CreateNewBlog = () => {
                 {errors.description?.type === "required" && <span>{t("Description is required.")}</span>}
                 {errors.description?.type === "pattern" && (
                     <span>
-                {language === "en"
+                {lng === "en"
                     ? t("Description can only contain English letters and spaces.")
                     : t("Description can only contain Arabic letters and spaces.")}
             </span>
@@ -93,7 +98,6 @@ const CreateNewBlog = () => {
                     <span>{t("Description cannot exceed 1000 characters.")}</span>}
             </div>
 
-            {/* Image URL Input */}
             <label htmlFor="image-url">{t("Image URL:")}</label>
             <input
                 type="text"
@@ -109,8 +113,7 @@ const CreateNewBlog = () => {
 
             <input type="submit" value={t("Submit")}/>
         </form>
-
     );
-};
+}
 
-export default CreateNewBlog;
+export default FormBlogs;
