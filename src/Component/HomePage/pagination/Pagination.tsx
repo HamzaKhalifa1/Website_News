@@ -1,5 +1,6 @@
 import React, {useState,useEffect} from "react";
 import Pagination from '@mui/material/Pagination';
+import styles from './Pagination.module.css';
 
 
 const NumberOFBlogs = 6;
@@ -21,7 +22,7 @@ const CustomPagination  = ({initialData, onPaginatedDataUpdate}: { initialData: 
     };
 
     return (
-        <div style={{display: "flex", justifyContent: "center", alignItems: "center", padding: '20px 0'}}>
+        <div className={styles.pagination}>
             <Pagination
                 count={Math.ceil((initialData?.length || 0) / NumberOFBlogs)}
                 color="primary"
