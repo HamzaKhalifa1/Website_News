@@ -1,9 +1,10 @@
 import CircularProgress from "@mui/material/CircularProgress";
+import styles from './loader.module.css';
 
 export default function Loader() {
 
   return (
-      <div style={{display: "flex", justifyContent: "center", alignItems: "center", height: "100vh"}}>
+      <div id={styles.loader} >
           <CircularProgress/>
       </div>
   )
