@@ -5,22 +5,15 @@ import {NavLink,Link} from "react-router-dom";
 import { useTranslation } from 'react-i18next';
 import i18n from "i18next";
 import cookies from 'js-cookie';
-import {useDispatch} from "react-redux";
-import {setAR, setEN} from "../../../Store/LanguageSlice";
 
 
 export default function Header (){
-    const dispatch = useDispatch();
 
     const {t} = useTranslation();
 
     const handleLanguageChange = (lang:string) => {
-        if (lang === 'en') {
-            dispatch(setEN())
-        } else if (lang === 'ar') {
-            dispatch(setAR())
-       }
         i18n.changeLanguage(lang);
+        window.location.reload();
     };
     const lng = cookies.get('i18next') || 'en';
     useEffect(() => {
@@ -36,7 +29,7 @@ export default function Header (){
                 <NavLink to="/" className={styles.link}>
                     {t("HomePage")}
                 </NavLink>
-                <NavLink to="CreateNewBlog" className={styles.link}>
+                <NavLink to="CreateEditBlog" className={styles.link}>
                     {t("Create new Blogs")}
                 </NavLink>
                 <div className={styles.dropdown}>
