@@ -1,8 +1,8 @@
 import React from "react";
-import styles from './Main_title.module.css'
+import styles from './Maintitle.module.css'
 import { useTranslation } from 'react-i18next';
 
-export default function Main_title(){
+export default function MainTitle(){
     const {t} = useTranslation();
     return (
         <div id={styles['main-title']}>
