@@ -1,11 +1,21 @@
-import axios from 'axios';
 import styles from './DeleteButton.module.css';
 import React from 'react';
+import cookies from "js-cookie";
+import {hideLoader, showLoader} from "../../../store/LoaderSlice";
+import {useDispatch} from "react-redux";
+import BlogService from "../../../services/BlogService";
+
 // @ts-ignore
 const DeleteButton = ({ id ,onDelete} ) => {
-
+    const dispatch=useDispatch();
+    const lng = cookies.get('i18next') || 'en';
+    const blogService =new BlogService({});
     const deleteBlog = async () => {
-        await axios.delete(`http://localhost:8000/blogs/${id}`);
+        dispatch(showLoader());
+        setTimeout(()=>{
+            dispatch(hideLoader());
+        },1000)
+        blogService.deleteBlogs(id,lng)
         onDelete(id);
     };
     return (
