@@ -1,9 +1,9 @@
 import React from 'react';
 import './App.css';
-import PagesRoutes from "./Routes/PagesRoutes";
+import PagesRoutes from "./routes/PagesRoutes";
 import { useSelector } from 'react-redux';
-import { RootState } from './Store/Store';
-import Loader from './common/Loader';
+import { RootState } from './store/Store';
+import Loader from './common/loader';
 
 
 function App() {
