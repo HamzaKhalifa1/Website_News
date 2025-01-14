@@ -14,9 +14,10 @@ const DeleteButton = ({ id ,onDelete} ) => {
         dispatch(showLoader());
         setTimeout(()=>{
             dispatch(hideLoader());
+            onDelete(id);
         },1000)
         blogService.deleteBlogs(id,lng)
-        onDelete(id);
+
     };
     return (
         <i onClick={deleteBlog} className={styles.icon + " fa fa-trash icon"}></i>
