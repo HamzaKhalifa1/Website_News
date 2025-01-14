@@ -24,7 +24,6 @@ class BlogService extends Component<{}, State> {
         try {
             const response = await axios.get(`http://localhost:8000/${lng}`);
             const data = response.data;
-            console.log(data);
             this.setState({ blogs: data || [] });
             return data || [];
         } catch (error) {

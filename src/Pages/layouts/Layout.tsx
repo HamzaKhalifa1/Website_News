@@ -10,7 +10,6 @@ import Loader from "../../common/loader";
 
 const Layout     = () => {
     const isLoading=useSelector((state: RootState) => state.loader.isLoading);
-console.log(isLoading);
 
     return (
         <div className={styles.relative}>
