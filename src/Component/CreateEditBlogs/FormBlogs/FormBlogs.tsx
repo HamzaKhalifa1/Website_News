@@ -3,7 +3,6 @@ import React from "react";
 import cookies from "js-cookie";
 import {useTranslation} from "react-i18next";
 import {useForm} from "react-hook-form";
-import axios from "axios";
 import {useNavigate} from "react-router-dom";
 import {hideLoader, showLoader} from "../../../store/LoaderSlice";
 import {useDispatch} from "react-redux";
@@ -21,8 +20,6 @@ const FormBlogs = ({isVisited, id}: FormBlogsProps) => {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const blogService =new BlogService({});
-
-
 
     const onSubmit = (data: any) => {
         dispatch(showLoader());
@@ -45,73 +42,78 @@ const FormBlogs = ({isVisited, id}: FormBlogsProps) => {
         }
     };
 
-
     return (
         <form id={styles['new-blog-form']} onSubmit={handleSubmit(onSubmit)}>
-            <label htmlFor="title">{t("Title")}</label>
+            <label htmlFor="title">{t("title")}</label>
             <input
                 type="text"
                 id="title"
                 className={`${styles["title-input"]} ${errors.title ? styles.error : ""}`}
-                placeholder={t("Enter title")}
+                placeholder={t("enterTitle")}
                 {...register("title", {
-                    required: true,
-                    pattern: lng === "en" ? /^[A-Z]/ : /^[\u0600-\u06FF\s]*$/,
-                    maxLength: 50,
+                    required: t("titleIsRequired"),
+                    pattern: {
+                        value: lng === "en" ? /^[A-Z]/ : /^[\u0600-\u06FF\s]*$/,
+                        message: lng === "en"
+                            ? t("titleMustStartWithACapitalLetter")
+                            : t("titleMustContainsArabicLetter"),
+                    },
+                    maxLength: {
+                        value: 50,
+                        message: t('titleCannotExceed50Characters'),
+                    },
                 })}
                 onKeyUp={() => trigger("title")}
             />
             <div id={styles['title-error']} className={styles['error-message']}>
-                {errors.title?.type === "required" && <span>{t("Title is required.")}</span>}
-                {errors.title?.type === "pattern" && (
-                    <span>
-                {lng === "en"
-                    ? t("Title must start with a capital letter.")
-                    : t("Title must contains Arabic letter")}
-            </span>
-                )}
-                {errors.title?.type === "maxLength" && <span>{t("Title cannot exceed 50 characters.")}</span>}
+                {errors.title && <span >{errors.title.message as string}</span>}
             </div>
 
-            <label htmlFor="description">{t("Description")}</label>
+            <label htmlFor="description">{t("description")}</label>
             <textarea
                 id={styles["description"]}
                 className={`${styles["textarea-input"]} ${errors.description ? styles.error : ""}`}
-                placeholder={t("Enter description")}
+                placeholder={t("enterDescription")}
                 {...register("description", {
-                    required: true,
-                    pattern: lng === "en" ? /^[a-zA-Z ]*$/ : /^[\u0600-\u06FF\s]*$/,
-                    maxLength: 1000,
+                    required: t('descriptionIsRequired'),
+                    pattern: {
+                        value: lng === "en" ? /^[a-zA-Z ]*$/ : /^[\u0600-\u06FF\s]*$/,
+                        message: lng === "en"
+                            ? t("descriptionCanOnlyContainEnglishLettersAndSpaces")
+                            : t("descriptionCanOnlyContainArabicLettersAndSpaces"),
+                    },
+                    maxLength: {
+                        value: 1000,
+                        message: t('descriptionCannotExceed1000Characters'),
+                    },
                 })}
                 onKeyUp={() => trigger("description")}
             ></textarea>
             <div id={styles["description-error"]} className={styles['error-message']}>
-                {errors.description?.type === "required" && <span>{t("Description is required.")}</span>}
-                {errors.description?.type === "pattern" && (
-                    <span>
-                {lng === "en"
-                    ? t("Description can only contain English letters and spaces.")
-                    : t("Description can only contain Arabic letters and spaces.")}
-            </span>
-                )}
-                {errors.description?.type === "maxLength" &&
-                    <span>{t("Description cannot exceed 1000 characters.")}</span>}
+                {errors.description && <span >{errors.description.message as string}</span>}
             </div>
 
-            <label htmlFor="image-url">{t("Image URL:")}</label>
+            <label htmlFor="image-url">{t("imageUrl")}</label>
             <input
                 type="text"
                 id={styles["image-url"]}
                 className={`${styles["image-input"]} ${errors.imageUrl ? styles.error : ""}`}
-                placeholder={t("Enter image URL")}
-                {...register("imageUrl", {pattern: /^(https?:\/\/[^\s]+)$/})}
+                placeholder={t("enterImageUrl")}
+                {...register("imageUrl",
+                    {
+                        pattern: {
+                            value: /^(https?:\/\/[^\s]+)$/ ,
+                            message: t("pleaseEnterAValidUrl")
+                        }
+                    }
+                    )
+            }
                 onKeyUp={() => trigger("imageUrl")}
             />
             <div id={styles["image-url-error"]} className={styles['error-message']}>
-                {errors.imageUrl?.type === "pattern" && <span>{t("Please enter a valid URL.")}</span>}
+                {errors.imageUrl && <span >{errors.imageUrl.message as string}</span>}
             </div>
-
-            <input type="submit" value={t("Submit")}/>
+            <input type="submit" value={t("submit")}/>
         </form>
     );
 }
