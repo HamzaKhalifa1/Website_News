@@ -27,13 +27,13 @@ export default function Header (){
             </div>
             <section className={styles.section}>
                 <NavLink to="/" className={styles.link}>
-                    {t("HomePage")}
+                    {t("homePage")}
                 </NavLink>
                 <NavLink to="CreateEditBlog" className={styles.link}>
-                    {t("Create new Blogs")}
+                    {t("createNewBlogs")}
                 </NavLink>
                 <div className={styles.dropdown}>
-                    <button className={styles.dropbtn}>{t("Language")}</button>
+                    <button className={styles.dropbtn}>{t("language")}</button>
                     <div className={styles.dropdownContent}>
                         <button onClick={() => handleLanguageChange('en') }>English</button>
                         <button onClick={() => handleLanguageChange('ar')}>العربية</button>
