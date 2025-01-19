@@ -9,14 +9,13 @@ import BlogService from "../../../services/BlogService";
 const DeleteButton = ({ id ,onDelete} ) => {
     const dispatch=useDispatch();
     const lng = cookies.get('i18next') || 'en';
-    const blogService =new BlogService({});
     const deleteBlog = async () => {
         dispatch(showLoader());
         setTimeout(()=>{
             dispatch(hideLoader());
             onDelete(id);
         },1000)
-        blogService.deleteBlogs(id,lng)
+        BlogService.deleteBlogs(id,lng)
 
     };
     return (
