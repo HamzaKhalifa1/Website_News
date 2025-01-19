@@ -14,6 +14,7 @@
   "submit": "إرسال",
   "titleIsRequired": "العنوان مطلوب.",
   "titleMustContainsArabicLetter": "يجب أن يحتوي العنوان على حروف عربية.",
+  "titleMustStartWithACapitalLetterAndEnglishWords": "يجب أن يبدأ العنوان بحرف كبير وكلمات إنجليزية.",
   "titleCannotExceed50Characters": "لا يمكن أن يتجاوز العنوان 50 حرفًا.",
   "descriptionIsRequired": "الوصف مطلوب.",
   "descriptionCanOnlyContainEnglishLettersAndSpaces": "يمكن أن يحتوي الوصف فقط على حروف إنجليزية ومسافات.",

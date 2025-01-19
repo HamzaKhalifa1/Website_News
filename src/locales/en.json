@@ -13,7 +13,7 @@
   "enterImageUrl": "Enter image URL",
   "submit": "Submit",
   "titleIsRequired": "Title is required.",
-  "titleMustStartWithACapitalLetter": "Title must start with a capital letter.",
+  "titleMustStartWithACapitalLetterAndEnglishWords": "Title must start with a capital letter and English words.",
   "titleMustStartWithAnArabicLetter": "Title must start with an Arabic letter.",
   "titleCannotExceed50Characters": "Title cannot exceed 50 characters.",
   "descriptionIsRequired": "Description is required.",
