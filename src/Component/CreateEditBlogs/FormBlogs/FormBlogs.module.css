@@ -1,4 +1,4 @@
-#new-blog-form {
+#newBlogForm {
     max-width: 600px;
     margin: 20vh auto;
     padding: 2rem;
@@ -14,11 +14,6 @@ label {
     display: block;
     margin-bottom: 0.5rem;
     color: #32315d;
-}
-
-.form-field {
-    position: relative;
-    margin-bottom: 1.5rem;
 }
 
 input[type="text"],
@@ -53,7 +48,7 @@ textarea.error:focus {
     box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.1);
 }
 
-.error-message {
+.errorMessage {
     font-size: 0.875rem;
     color: #dc3545;
     margin-top: 0.5rem;
@@ -98,7 +93,7 @@ textarea::placeholder {
 }
 
 @media (max-width: 768px) {
-    #new-blog-form {
+    #newBlogForm {
         margin: 10vh auto;
         padding: 1.5rem;
     }
@@ -109,7 +104,7 @@ textarea::placeholder {
 }
 
 @media (prefers-color-scheme: dark) {
-    #new-blog-form {
+    #newBlogForm {
         background-color: white;
         box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
     }

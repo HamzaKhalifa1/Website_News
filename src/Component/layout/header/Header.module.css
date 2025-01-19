@@ -6,7 +6,7 @@
     justify-content: space-between;
 }
 
-#div_img {
+#divImg {
     margin: auto 60px;
 }
 
@@ -78,7 +78,7 @@ section a:hover {
 }
 
 @media screen and (max-width: 648px) {
-    #div_img {
+    #divImg {
         margin: auto 10px;
     }
 

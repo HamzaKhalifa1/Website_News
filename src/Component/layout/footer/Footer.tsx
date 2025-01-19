@@ -6,11 +6,11 @@ export default function Footer(){
     const {t} = useTranslation();
     return (
         <footer id={styles.footer}>
-            <div id={styles.footer_sub}>
-                <div><p className={styles.Large_text_footer}><i className="fa-solid fa-user"></i>{t("hamzaKhalifa")}</p></div>
+            <div id={styles.footerSub}>
+                <div><p className={styles.largeTextFooter}><i className="fa-solid fa-user"></i>{t("hamzaKhalifa")}</p></div>
                 <div>
                     <a href="https://www.linkedin.com/in/hamza-khalifa-385b23287" target="_blank">
-                    <p className={styles.Large_text_footer}>
+                    <p className={styles.largeTextFooter}>
                         <i className="fa-brands fa-linkedin"></i>
                         LinkedIn
                     </p>
@@ -18,14 +18,14 @@ export default function Footer(){
                 </div>
                 <div>
                     <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox" target="_blank">
-                        <p className={styles.Large_text_footer}>
+                        <p className={styles.largeTextFooter}>
                             <i className="fa-solid fa-envelope"></i>
                             engHamzaKha@gmail.com
                         </p>
                     </a>
                 </div>
-                <div><p className={styles.Large_text_footer}><i className="fa-solid fa-phone"></i>0597956633</p></div>
-                <div><p className={styles.Large_text_footer}><i className="fa-solid fa-house"></i>{t("jeninHaifaStreet")}</p></div>
+                <div><p className={styles.largeTextFooter}><i className="fa-solid fa-phone"></i>0597956633</p></div>
+                <div><p className={styles.largeTextFooter}><i className="fa-solid fa-house"></i>{t("jeninHaifaStreet")}</p></div>
             </div>
         </footer>
     );

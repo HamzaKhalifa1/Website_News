@@ -22,7 +22,7 @@ export default function Header (){
 
     return (
         <header id={styles.nav} >
-            <div id={styles.div_img} >
+            <div id={styles.divImg} >
                 <Link to={'/'}><img src={logo} alt="LOGO"/></Link>
             </div>
             <section className={styles.section}>
