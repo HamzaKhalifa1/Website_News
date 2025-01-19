@@ -3,7 +3,7 @@ import Layout from "../Pages/layouts/Layout";
 import HomePage from "../Pages/HomePage";
 import CreateEditBlog from "../Pages/CreateEditBlog";
 import React from "react";
-import EventLoader from "../Component/HomePage/EventLoader";
+import EventLoader from "../loaders/EventLoader";
 
 const PagesRoutes=()=>{
     const route = createBrowserRouter([
