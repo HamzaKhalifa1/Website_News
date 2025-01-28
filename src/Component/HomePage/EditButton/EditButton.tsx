@@ -24,6 +24,7 @@ const EditButton = ({id}: EditButtonProps) => {
 
     return (
         <i
+            data-testid="edit-icon"
             onClick={handleClick}
             className={`${styles.icon} fa fa-edit icon`}
         ></i>
