@@ -19,7 +19,7 @@ const DeleteButton = ({ id ,onDelete} ) => {
 
     };
     return (
-        <i onClick={deleteBlog} className={styles.icon + " fa fa-trash icon"}></i>
+        <i data-testid="delete-icon" onClick={deleteBlog} className={styles.icon + " fa fa-trash icon"}></i>
     );
 }
 
