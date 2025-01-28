@@ -9,9 +9,9 @@ i18n
     .use(HttpApi)
     .init({
         debug: true,
-        fallbackLng:'en',
+        fallbackLng: 'en',
         detection: {
-            order: ['cookie', 'localStorage', 'sessionStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
+            order: ['cookie', 'htmlTag','localStorage', 'sessionStorage', 'navigator',  'path', 'subdomain'],
             caches: ['cookie'],
         },
         backend: {
